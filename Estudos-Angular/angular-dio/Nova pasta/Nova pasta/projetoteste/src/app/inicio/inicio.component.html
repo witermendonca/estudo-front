@@ -1,0 +1,21 @@
+<div [formGroup]="select">
+    <label for="">card type</label>
+    <select formControlName="cardType">
+        <option value="text">TEXT</option>
+        <option value="url">URL</option>
+        <option value="card">CARD</option>
+    </select>
+</div>
+
+
+<ng-container *ngIf="valeuSelect === 'text'">
+    <h1>Selecionei o card TEXT</h1>
+</ng-container>
+
+<ng-container *ngIf="valeuSelect === 'url'">
+    <h1>Selecionei o card URL</h1>
+</ng-container>
+
+<ng-container *ngIf="valeuSelect === 'card'">
+    <h1>Selecionei o card CARD</h1>
+</ng-container>

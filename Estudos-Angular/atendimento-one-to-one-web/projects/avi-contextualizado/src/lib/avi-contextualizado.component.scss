@@ -1,0 +1,119 @@
+.box-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;   
+    
+    .tooltip {
+        position: relative;
+        
+        background-color: #FFFFFF;
+    
+        display: flex;
+        flex-direction: column;
+        
+        padding: 0.7em;
+        gap: 8px;
+    
+        border-radius: 12px;
+    
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    
+        &:before {
+            position: absolute;
+            content: "";
+            top: 100%;
+            right: 20px;
+            width: 0;
+            border-top: 13px solid #c4c4c4;
+            border-left: 13px solid transparent;
+            border-right: 13px solid transparent;
+            z-index: -1;
+        }           
+    
+        &:after {
+            position: absolute;
+            content: "";
+            top: 100%;
+            right: 25px;
+            width: 0;
+            border-top: 10px solid #ffffff;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            z-index: 1;
+        } 
+    
+        .tooltip-header {
+            display: flex;
+            justify-content: space-between;
+    
+            gap: 16px;
+    
+            span {
+                font-size: 0.9em;
+                color: #0099FF;
+            }
+        }
+        
+        .tooltip-body {
+            margin: 0.9em 0;
+            font-size: 0.9em;
+        }
+        
+        .tooltip-footer {
+            button {
+                width: 100%;
+                padding: 0.6em;
+    
+                background-color: transparent;
+                border: 1px solid #0099FF;
+                border-radius: 8px;
+    
+                cursor: pointer;
+            }
+        }            
+    }
+    
+    .float-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        gap: 8px;
+    
+        padding: 0.7em;
+    
+        border: none;
+        border-radius: 42px;
+    
+        cursor: pointer;
+    
+        background-color: #0099FF;
+        color: #FFFFFF;
+    
+        font-size: 1.1em;
+        font-weight: 400;
+    
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.top-left{
+    margin-top: 5vh;
+    margin-left: 5vw;
+}
+
+.top-right{
+    margin-top: 5vh;
+    margin-right: 5vw;
+}
+
+.bottom-left{
+    margin-left: 5vw;
+    margin-bottom: 5vh;
+} 
+
+.bottom-right{
+    margin-right: 5vw;
+    margin-bottom: 5vh;
+}
+

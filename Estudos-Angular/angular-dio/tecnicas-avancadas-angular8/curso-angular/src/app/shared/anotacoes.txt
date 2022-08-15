@@ -1,0 +1,10 @@
+comando para ng g s shared/components/validarCampos para criar um service no caminho determinado com
+
+schematics @schematics/angular@7.0.7 --save-dev para uso em desenvolvimentores
+
+ng g m shared/components/campos  para criar modulo e caminho específicado 
+
+ng g c shared/components/campos/input-text --nospec  para criar um components sem spec
+
+
+

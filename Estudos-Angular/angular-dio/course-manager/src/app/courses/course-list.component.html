@@ -1,0 +1,44 @@
+<div class="container">
+    <h1>Course List</h1>
+
+    <div class="form-group row">
+
+        <label class="col-sm-2 col-form-label">Filter By:</label>
+    
+        <div class="col-sm-10">
+            <input [(ngModel)]="filter" class="form-control">
+        </div>
+    
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Code</th>
+                <th>Release Date</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let course of filteredCourses">
+                <td><img [src]="course.imageUrl" width="40" height="40"></td>
+                <td>{{ course.name }}</td>
+                <td>{{ course.price }}</td>
+                <!--Pipe lowercase Native Angular, podemos utilizar mais de um Pipe-->
+                <td>{{ course.code | lowercase | replace:'-':' ' }}</td>
+                <!--Pipe Date Native Angular-->
+                <td>{{ course.releaseDate | date: 'dd/MM/yyy' }}</td>
+                <td>
+                    <app-stars [rating]="course.rating"></app-stars>
+                </td>
+                <td>
+                    <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary mr-2">Edit</a>
+                    <button class="btn btn-danger ml-2" (click)="deleteById(course.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

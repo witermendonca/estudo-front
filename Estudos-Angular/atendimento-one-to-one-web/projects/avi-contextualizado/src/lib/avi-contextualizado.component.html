@@ -1,0 +1,17 @@
+<div [ngClass]="['box-container', props.position]" >
+    <div class="tooltip">
+        <div class="tooltip-header">
+            <span>Assitente itaú</span>
+            <span>X</span> 
+        </div>
+        <div class="tooltip-body">
+            Hello GT Online Data
+        </div>
+        <div class="tooltip-footer">
+            <button (click)="onInitTalk()">conversar</button>
+        </div>
+    </div>
+    <button class="float-button" (click)="onInitChat()">
+        <i class="material-icons">{{ props?.icon }}</i> {{ props?.title }}
+    </button>
+</div>

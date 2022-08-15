@@ -1,0 +1,25 @@
+[00:00] Eu estou aqui falando, falando de integração contínua, disso tudo, mas está faltando uma coisa aqui no nosso quebra-cabeça, deixa eu voltar lá para o nosso “package.json”.
+
+[00:10] É o seguinte, se você está rodando o seu teste de Angular no servidor de integração contínua, você tem que gerar algum report para que esse servidor de integração continue intérprete, e saiba se o seu teste passou ou não passou, ou se houve algum tipo de problema.
+
+[00:27] Por padrão o Karma não vem com isso não, o mais famoso, o mais utilizado que a galera costuma utilizar, para gerar esse report, é o karma-junit repórter, então vamos instalar esse cara e vamos ver o que que acontece quando esse reporter faz parte da nossa configuração do Karma.
+
+[00:49] Eu estou com um projeto aqui parado, eu vou escrever npm install -D D maiúsculo, porque é uma dependência de desenvolvedor, e vamos instalar o “karma-junit-reporter@2.0.1”, vamos lá, deixa eu dar “Enter” aqui. Instalando.
+
+[01:08] Isso vai ser um plugin do Karma então você já deve estar associado que toda vez que instalamos um plugin o Karma não fez curso mãe Diná para instalar o plugin automaticamente, precisamos registrá-lo.
+
+[01:20] Então vamos voltar lá para o “karma.config”, voltando lá para o “karma.config”, eu tenho aqui, tenho minhas partes aqui de plugin, tem aqui o karma-coverage, e outros, blablabla, eu vou botar ele aqui como último, vou botar debaixo desse reporter aqui para ficar organizado.
+
+[01:47] Vai ser o require(’karma-junit-reporter’), então eu tenho dois reporters aqui, um perto do outro, vou salvar, e para que possamos escolher esse reporter, no nosso teste, o que que precisamos fazer?
+
+[02:13] Eu vou lá no meu “package.json”, onde tem o meu teste ci/cd eu vou criar aqui um reporter para, passei a configuração watch, browsers, e agora antes deles eu vou passar aqui --reporters o que que eu vou usar? junit. Então ficou claro?
+
+[02:41] Nesse meu script CI/CD eu estou dizendo que qual o *reporter que você vai usar? É o junit, que é esse cara que eu passei aqui para o “karma.config”, fica olhando para cá onde ficam os arquivos, você vai ver que vai aparecer uma pasta marota lá dentro, deixa eu executar aqui. npm run, como é que eu coloquei noscript mesmo? Me deu um branco. npm tun test-ci, vamos rodar, ver se eu não cometi nenhuma gafe com nome de arquivo nem nada, ele está rodando, ele vai gerar a versão headless do meu browser, certo?
+
+[03:25] E vai ter que gerar um reporting, olha está gerando, gerou o bundle, vai rodar os testes, e se você olhar aqui no lado esquerdo onde ficam as pastas e arquivos, ele gerou para nós olha, deixa eu ver aqui, esse report, olha, ChromeHeadless, e esse report para o FirefoxHeadless.
+
+[03:55] É um arquivo XML, que servidores de integração contínua tem plugin para poder entender o que cada um desses testes fazem, se eu olhar por aqui nos códigos, você vai ver que tem o test case, olha, o tempo que cada teste demorou para ser executado, tomou para ser executado, olha como é que é rápido, o teste, olha esse daqui 0.001 milissegundos, você tem é, é está aqui e isso tudo aqui vai ser interpretado pelo seu servidor de integração contínua.
+
+[04:30] A mesma coisa eu vi do Firefox, agora vou ver aqui do Chrome, a mesma aqui para o Chrome, se falhou seu servidor de integração contínua vai ser inteligente para poder saber é o que que aconteceu e qual é o tipo de erro, então fica essa dica ai, que você 90% das vezes vai gerar esse junit-report para o servidor de integração contínua.
+
+[04:57] Agora que vimos essa parte de como rodar o navegador no browser headless, gerar esse report para servidores de integração contínua, vamos falar um pouco agora sobre cobertura de testes, isso é importante.

@@ -1,0 +1,14 @@
+
+<h1>{{title}}</h1>
+
+<p>{{name}}</p>
+<br>
+<br>
+
+<input [ngModel]="name" name="name"> <!--ONe way data buind apenas exibe, não atualiza caso seja escrito algum valor no browser-->
+
+
+<br>
+<br>
+
+<input [(ngModel)]="name" name="name"> <!--Two way data buind exibe e altera,  atualiza caso seja escrito algum valor no browser-->

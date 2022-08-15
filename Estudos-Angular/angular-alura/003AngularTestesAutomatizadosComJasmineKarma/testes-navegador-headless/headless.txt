@@ -1,0 +1,34 @@
+[00:00] Tudo muito bonito, nós aprendemos que é uma boa prática você criar scripts que indiquem quais são os browsers que você quer rodar no ambiente de testes, no lugar de alterar diretamente no “karma config”, mas porque isso? Vamos entender mais profundamente.
+
+[00:19] Se você está criando um projeto em Angular, provavelmente você vai na sua empresa, ou se você quiser utilizar um serviço gratuito, você vai querer fazer o build da sua aplicação no servidor de integração contínua.
+
+[00:33] Esse servidor toda vez que você faz o seu commit lá no Github, e você faz o push para um branch ele vai pegar esse branch e vai rodar os testes, vai fazer o build do seu front-end, e depois do build vai rodar os testes para saber se está tudo funcionando, se está tudo bonito.
+
+[00:51] Então nesse servidor, eu vou pegar como exemplo Jenkins é um servidor Java, que roda pode ser, rodar localmente ou um serviço da cloud, é normalmente tudo isso roda em um terminal, você não tem uma interface gráfica, você não tem um graphic user interface.
+
+[01:08] Então para esses servidores de integração contínua é bem interessante que eles rodem o seu teste, eles ainda precisam sim de um Firefox, de um Chrome, para rodar o seu teste, mas o ideal é que esses browsers rodem na sua versão headless. O que significa? É uma versão que roda em memória sem a parte gráfica, que o usuário interage.
+
+[01:33] Primeiro, essa forma headless, ela consome menos memória, porque essa versão não tem que renderizar os componentes na tela, mas o mais importante é que ela se comporta exatamente igual a um browser no qual você estaria rodando, igual o que fazemos aqui, rodar o Karma no navegador.
+
+[01:54] Então o que precisamos saber agora é como é que eu ativo esse tal de versão headless do meu browser. Primeira coisa que eu vou te falar é o seguinte, internet Explorer e Safari, não possuem versão headless, o Internet Explorer, nunca vai suportar, o Safari vai depender da Apple, mas eles não suportam a versão headless, pode ser que isso mude no futuro.
+
+[02:21] O Chrome e o Firefox eu tenho certeza absoluta que suporta a versão headless, então que que vamos fazer? Eu vou chegar aqui no meu script, vou criar mais um script que eu vou chamar de ”test-ci”: de continuous integration, esse cara ele vai chamar o ng test –browsers e que eu vou passar aqui é um cara chamado ChromeHeadless, muito cuidado na hora de você escrever esse cara, tem que estar exatamente igual aqui, vou até testar, aqui ChromeHeadless.
+
+[03:05] Esse cara por padrão como nosso navegador já tem o Chrome instalado não precisamos fazer nada, ele já funciona, é só botar o ChromeHeadless, tanto isso é verdade que eu vou chegar aqui no meu terminal npm run test-ci, ele vai rodar aqui, ele vai criar o ChromeHeadless, vai rodar, não vai abrir browser nenhum, ele fala até aqui, ele já rodou meu teste e a versão headless ele roda até mais rápida, já rodou, e ele está dizendo que rodou a versão headless. Perfeito.
+
+[03:50] Mas tem um problema, que problema é esse? Quando você está em um servidor de integração contínua que ele vai fazer o build da sua aplicação e rodar os testes, esse teste ele tem que rodar e terminar, só que por padrão quando estamos rodando os nossos testes, o Karma ele fica, ele prende o processo do terminal.
+
+[04:11] Então não queremos ativar o recurso de watch queremos que esse cara execute uma vez e pare, como fazemos isso? Vamos chegar lá no nosso projeto, aqui no nosso novo script, vou botar a opção --watch=false que vai receber o valor false.
+
+[04:32] Vou rodar, vocês vão verificar que meu teste vai rodar automaticamente vai liberar o processo, vai fechar o Karma, vamos lá, olha lá, generating browser application bundles, ok, rodou, compilou, rodou o teste, e terminou, não está prendendo o processo, não continua rodando.
+
+[05:01] Então qual é a ideia? A Ideia é que tal rodarmos o Firefox também headless junto com o ChromeHeadless? Mas será que vai funcionar, será que se eu botar FirefoxHeadless aqui junto com Chrome no script, vai funcionar? Vamos tentar, e funcionou, ele rodou 16 testes, ele mostra o total, porque eu executei 8 mais 8, o do Chrome e do Firefox.
+
+[05:31] Mas sabemos que isso é para integração contínua, por exemplo, se esse teste falha o Jenkins sendo inteligente vai detectar que houve uma falha, e evitar que faça o deploy da sua aplicação, se você tem um deploy automático, se não passou nos testes e por aí vai.
+
+
+Temos o seguinte script:
+"test-headless": "ng test --browsers Chrome",
+
+Marque a opção que altera corretamente o script para que sua execução seja feita na versão headless do Chrome:
+"test-headless": "ng test --browsers ChromeHeadless"

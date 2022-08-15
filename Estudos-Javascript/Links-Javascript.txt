@@ -1,0 +1,40 @@
+Links JavaScript
+
+Uma breve explicação sobre os tipos de variáveis com JavaScript
+https://medium.com/trainingcenter/entendendo-os-tipos-e-variaveis-em-javascript-f9753b4c7b61
+
+Variáveis em JavaScript - W3Schools
+https://www.w3schools.com/js/js_variables.asp
+
+Tipos Primitivos - JavaScript Eloquente
+https://github.com/braziljs/eloquente-javascript/blob/master/chapters/01-valores-tipos-operadores.md#valores-tipos-e-operadores
+
+Operadores de Comparação - W3Schools
+https://www.w3schools.com/js/js_comparisons.asp
+
+Operadores de Comparação - JavaScript Eloquente
+https://github.com/braziljs/eloquente-javascript/blob/master/chapters/01-valores-tipos-operadores.md#compara%C3%A7%C3%B5es
+
+Operadores Lógicos
+https://github.com/braziljs/eloquente-javascript/blob/master/chapters/01-valores-tipos-operadores.md#operadores-l%C3%B3gicos
+
+If Else
+https://www.w3schools.com/js/js_if_else.asp
+
+Estruturas Condicionais
+https://github.com/braziljs/eloquente-javascript/blob/master/chapters/02-estrutura-do-programa.md#execu%C3%A7%C3%A3o-condicional
+
+Arrays
+https://github.com/braziljs/eloquente-javascript/blob/master/chapters/04-estruturas-de-dados.md#estrutura-de-dados-objetos-e-array
+
+Strings
+https://github.com/braziljs/eloquente-javascript/blob/master/chapters/04-estruturas-de-dados.md#strings-e-suas-propriedades
+
+Estrutura de Repetição - For
+https://github.com/braziljs/eloquente-javascript/blob/master/chapters/02-estrutura-do-programa.md#loops-for
+
+Funções
+https://github.com/braziljs/eloquente-javascript/blob/master/chapters/03-funcoes.md#fun%C3%A7%C3%B5es
+
+
+

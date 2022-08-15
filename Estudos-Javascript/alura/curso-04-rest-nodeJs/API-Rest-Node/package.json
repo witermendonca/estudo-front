@@ -1,0 +1,32 @@
+{
+  "name": "projeto-nodejs-rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon, index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/witermendonca/API-Rest-Node.git"
+  },
+  "author": "witer mendonca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/witermendonca/API-Rest-Node.git"
+  },
+  "homepage": "https://github.com/witermendonca/API-Rest-Node.git",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "body-parser": "^1.19.0",
+    "consign": "^0.1.6",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
